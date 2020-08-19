@@ -61,7 +61,7 @@ html {
 }
 
 .container .container__logo__text {
-  width: 400px;
+  width: 450px;
   margin-top: -40px;
   height: 200px;
   background: url(./images/logoWithoutEffect.svg);
@@ -167,6 +167,15 @@ html {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .container__time {
@@ -186,40 +195,47 @@ html {
 }
 
 .section__highscores__list__ul {
-  text-align: left;
-  margin: 0 auto;
+  font-family: monospace;
   width: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   list-style-type: none;
 }
 
 .section__highscores__list__ul li {
   font-family: monospace;
-  text-align: center;
   margin-top: 5px;
-}
-
-.section__highscores__list__ul li::first-letter {
-  padding: 5px;
-  font-family: monospace;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .arrow {
   display: inline-block;
+  text-align: left;
   width: 20px;
   height: 12px;
   padding: 0 5px 0 5px;
-  margin: 0 10px 0 10px;
   background: url(./images/arrowIcon.svg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  position: relative;
 }
 
 .score {
-  position: absolute;
   display: inline-block;
-  text-align: right;
+  width: 60px;
 }
 
 @media (max-width: 600px) {

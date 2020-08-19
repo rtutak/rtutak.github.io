@@ -47,7 +47,7 @@ html {
     background-repeat: no-repeat;
   }
   .container__logo__text {
-    width: 400px;
+    width: 450px;
     margin-top: -40px;
     height: 200px;
     background: url(./images/logoWithoutEffect.svg);
@@ -137,6 +137,9 @@ html {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .container__time {
   visibility: hidden;
@@ -152,37 +155,35 @@ html {
   text-align: center;
 }
 .section__highscores__list__ul {
-  text-align: left;
-  margin: 0 auto;
+  font-family: monospace;
   width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   list-style-type: none;
   li {
     font-family: monospace;
-    text-align: center;
     margin-top: 5px;
-    &::first-letter {
-      padding: 5px;
-      font-family: monospace;
-    }
+    display: flex;
+    justify-content: space-evenly;
   }
 }
 .arrow {
   display: inline-block;
+  text-align: left;
   width: 20px;
   height: 12px;
   padding: 0 5px 0 5px;
-  margin: 0 10px 0 10px;
   background: url(./images/arrowIcon.svg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  position: relative;
 }
 .score {
-  position: absolute;
   display: inline-block;
-  text-align: right;
+  width: 60px;
 }
+
 @media (max-width: 600px) {
   .container {
     .container__logo__text {
