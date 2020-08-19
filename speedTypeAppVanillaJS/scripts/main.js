@@ -148,7 +148,8 @@ function saveHighscore() {
 function matchWords() {
   if (
     wordToMatch.innerHTML != "" &&
-    wordToMatch.innerHTML === userInput.value
+    //toUpperCase allow to perform case insensitive string comparision
+    wordToMatch.innerHTML.toUpperCase() === userInput.value.toUpperCase()
   ) {
     return true;
   } else {
