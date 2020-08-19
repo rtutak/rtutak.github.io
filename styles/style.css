@@ -1,0 +1,731 @@
+@-webkit-keyframes glovingArrows {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes glovingArrows {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100%;
+  background-color: #efefef;
+}
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+.highlight {
+  color: #69c9d0;
+}
+
+.hamburger {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  font-size: 50px;
+  top: 10px;
+  left: 10px;
+  color: black;
+  cursor: pointer;
+  z-index: 10;
+  display: none;
+}
+
+.options {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.svgLogo {
+  width: 45px;
+  height: 45px;
+  margin: 0 20px 0 10px;
+}
+
+.navContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: transparent;
+  height: 60px;
+}
+
+.navContainer li {
+  text-decoration: none;
+  margin-right: 20px;
+  list-style-type: none;
+}
+
+.navContainer a {
+  font-size: 16px;
+  text-decoration: none;
+  color: white;
+  text-shadow: 1px 1px black;
+  margin: 0 20px 0 20px;
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.navContainer a:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: white;
+  -webkit-transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+.navContainer a:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+.imageContainer,
+.aboutMe {
+  position: relative;
+}
+
+.imageContainer {
+  margin-top: -60px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-color: #080808;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+}
+
+.imageContainer i {
+  text-align: center;
+  font-size: 80px;
+  color: #69c9d0;
+  cursor: pointer;
+  -webkit-animation: glovingArrows 3s infinite;
+          animation: glovingArrows 3s infinite;
+  -webkit-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
+  margin-top: 20px;
+}
+
+.imageContainer i:hover {
+  color: white;
+  -webkit-transition: 0.5s ease-in;
+  transition: 0.5s ease-in;
+}
+
+.svgImagesContainer {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 80%;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.svgImagesContainer .svgMyself {
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.svgImagesContainer .svgMyself img {
+  -webkit-box-shadow: 0px 4px 9px 0px #a5a5a5;
+          box-shadow: 0px 4px 9px 0px #a5a5a5;
+}
+
+.svgImagesContainer p {
+  font-size: 18px;
+  font-weight: 300;
+  text-align: center;
+  line-height: 22px;
+  color: white;
+}
+
+.waveImg {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.smartphoneText {
+  display: none;
+}
+
+.projectsContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  min-height: 500px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.projectBox {
+  position: relative;
+  width: 280px;
+  height: 400px;
+  margin: 5px;
+  background: #080808;
+  overflow: hidden;
+  color: white;
+  -webkit-box-shadow: 0px 4px 9px 0px #a5a5a5;
+          box-shadow: 0px 4px 9px 0px #a5a5a5;
+  border-radius: 5px;
+}
+
+.projectBox .imgBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+
+.projectBox:hover .firstBox {
+  -webkit-clip-path: polygon(10% 5%, 90% 5%, 90% 50%, 10% 60%);
+          clip-path: polygon(10% 5%, 90% 5%, 90% 50%, 10% 60%);
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+
+.projectBox:hover .secondBox {
+  -webkit-clip-path: polygon(10% 5%, 90% 5%, 90% 60%, 10% 60%);
+          clip-path: polygon(10% 5%, 90% 5%, 90% 60%, 10% 60%);
+}
+
+.projectBox:hover .thirdBox {
+  -webkit-clip-path: polygon(10% 5%, 90% 5%, 90% 60%, 11% 50%);
+          clip-path: polygon(10% 5%, 90% 5%, 90% 60%, 11% 50%);
+}
+
+.projectsContainer .projectBox .content {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 15px;
+  text-align: center;
+}
+
+.projectsContainer .projectBox .content a {
+  text-decoration: none;
+  background: #69c9d0;
+  color: #080808;
+  padding: 5px;
+  display: inline-block;
+  margin: 5px;
+  margin-top: 10px;
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transform: translateY(30px);
+          transform: translateY(30px);
+}
+
+.projectsContainer .projectBox .content a:hover {
+  letter-spacing: 1.5px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.projectsContainer .projectBox .content h2 {
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transform: translateY(30px);
+          transform: translateY(30px);
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.projectsContainer .projectBox .content p {
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transform: translateY(30px);
+          transform: translateY(30px);
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.projectBox:hover .content h2,
+.projectBox:hover .content p,
+.projectBox:hover .content a {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+
+#projects h1 {
+  text-align: center;
+  letter-spacing: 2px;
+  margin: 50px 0 0 0;
+  font-weight: 300;
+  color: #080808;
+}
+
+.arrowContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.aboutMe {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #080808;
+  background-color: #080808;
+  width: 100%;
+  height: 600px;
+  position: relative;
+}
+
+.aboutMe .svgSkillsImg {
+  width: 80%;
+  height: 80%;
+}
+
+.aboutMe .svgSkillsImgMobile {
+  display: none;
+}
+
+.lightboxGallery h1 {
+  text-align: center;
+  letter-spacing: 2px;
+  margin: 50px 0 20px 0;
+  color: #080808;
+  font-weight: 300;
+}
+
+.gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  min-height: 400px;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.gallery .hoverZoom {
+  -webkit-box-shadow: 0px 4px 9px 0px #a5a5a5;
+          box-shadow: 0px 4px 9px 0px #a5a5a5;
+  height: 250px;
+  width: 250px;
+  border-radius: 5px;
+  margin: 7px;
+}
+
+.gallery .biggerImage {
+  width: 300px;
+  height: 300px;
+  z-index: 4;
+}
+
+.gallery .biggestImage {
+  width: 300px;
+  height: 350px;
+  z-index: 5;
+}
+
+.gallery a img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.smallThumb {
+  display: none;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background-image: url(../images/footerImgArrow.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 250px;
+  width: 100%;
+}
+
+footer .footerTextRight {
+  margin-top: 20px;
+  text-align: right;
+  color: white;
+  width: 60%;
+  font-weight: 300;
+}
+
+footer a {
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: 300;
+  padding: 5px;
+  color: white;
+  font-weight: 300;
+}
+
+footer a:hover {
+  letter-spacing: 1.1px;
+  -webkit-transition: ease-in-out 300ms;
+  transition: ease-in-out 300ms;
+}
+
+footer .heartSvg {
+  width: 20px;
+  height: 20px;
+  padding: 2px;
+}
+
+.socialsContainer {
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 140px;
+}
+
+.socialsContainer a {
+  display: inline-block;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+.iconLinkedin,
+.iconDeviantart,
+.iconFacebook {
+  margin: 2px;
+  font-size: 20px;
+  width: 20px;
+  display: inline-block;
+  color: white;
+}
+
+.overlayNav {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.92);
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  overflow: hidden;
+}
+
+.overlayNav .exitOverlay {
+  position: absolute;
+  top: -20px;
+  right: -100px;
+  font-size: 40px;
+  color: #69c9d0;
+  cursor: pointer;
+}
+
+.overlayNav ul {
+  position: fixed;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  top: 50%;
+  list-style-type: none;
+}
+
+.overlayNav li {
+  margin: 40px 0 40px 0;
+  text-align: center;
+}
+
+.overlayNav li a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+.overlayNav li a:hover {
+  opacity: 0.8;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 1490px) {
+  .footer {
+    min-height: 200px;
+  }
+  .gallery {
+    margin: 30px 0 30px 0;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .gallery .hoverZoom {
+    margin: 8px;
+    width: 300px;
+    height: 300px;
+  }
+  .smallThumb {
+    display: block;
+  }
+  .bigThumb {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 890px) {
+  .projectsContainer {
+    margin: 30px 0 30px 0;
+  }
+}
+
+@media only screen and (max-width: 670px) {
+  .options {
+    display: none;
+  }
+  .imageContainer {
+    margin-top: 0px;
+  }
+  .imageContainer i {
+    -webkit-transition: 0.5s ease-out;
+    transition: 0.5s ease-out;
+  }
+  .svgImagesContainer .svgMyself {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: -20px;
+  }
+  .svgImagesContainer p {
+    font-size: 16px;
+    width: 350px;
+  }
+  .hamburger {
+    display: block;
+    width: 50px;
+    height: 50px;
+    color: #69c9d0;
+    text-align: center;
+    line-height: 50px;
+  }
+  .aboutMe {
+    height: 500px;
+  }
+  .aboutMe .svgSkillsImg {
+    display: none;
+  }
+  .aboutMe .svgSkillsImgMobile {
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    height: 90%;
+  }
+  .firstBox img {
+    -webkit-clip-path: polygon(10% 5%, 90% 5%, 90% 50%, 10% 60%);
+            clip-path: polygon(10% 5%, 90% 5%, 90% 50%, 10% 60%);
+  }
+  .secondBox img {
+    -webkit-clip-path: polygon(10% 5%, 90% 5%, 90% 60%, 10% 60%);
+            clip-path: polygon(10% 5%, 90% 5%, 90% 60%, 10% 60%);
+  }
+  .thirdBox img {
+    -webkit-clip-path: polygon(10% 5%, 90% 5%, 90% 60%, 11% 50%);
+            clip-path: polygon(10% 5%, 90% 5%, 90% 60%, 11% 50%);
+  }
+  .projectBox {
+    margin: 10px;
+  }
+  .projectsContainer .projectBox .content a,
+  .projectsContainer .projectBox .content h1,
+  .projectsContainer .projectBox .content h2,
+  .projectsContainer .projectBox .content p {
+    opacity: 1;
+    -webkit-transform: translateY(5px);
+            transform: translateY(5px);
+  }
+  footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-image: url(../images/footerImgMobile.svg);
+    background-position: center;
+  }
+  footer div {
+    color: white;
+    width: 90%;
+    font-weight: 300;
+  }
+  footer .footerTextRight {
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+  }
+  footer a {
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 300;
+    color: #f4f4f3;
+  }
+  footer a:hover {
+    color: white;
+  }
+  footer .heartSvg {
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+  }
+  .socialsContainer {
+    margin-top: 90px;
+    width: 150px;
+  }
+  .socialsContainer a {
+    padding: 10px;
+  }
+}
+
+@media only screen and (max-height: 440px) {
+  .imageContainer i {
+    display: none;
+  }
+  .svgImagesContainer .svgMyself {
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+  }
+  .svgImagesContainer p {
+    font-size: 16px;
+    width: 350px;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .imageContainer p {
+    font-size: 14px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

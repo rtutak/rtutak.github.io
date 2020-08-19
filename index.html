@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles/lightbox.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://kit.fontawesome.com/aa88a4a54d.js" crossorigin="anonymous" defer></script>
+</head>
+
+<body>
+  <div class="hamburger"><img src="./images/hamburgerIcon.svg"></div>
+  <! overlay menu -->
+    <nav class="overlayNav">
+      <ul>
+        <span class="exitOverlay"><i class="far fa-times-circle"></i></span>
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li><a href="#bio">Skills</a></li>
+        <li><a href="resume.html" target="_blank">Resume</a></li>
+        <li><a href="#footer">Contact</a></li>
+      </ul>
+    </nav>
+
+    <nav class="options">
+      <ul class="navContainer">
+        <li data-aos="fade-left"><a href="#bio">Skills</a></li>
+        <li><a href="resume.html" target="_blank">Resume</a></li>
+        <li data-aos="fade-right"><a href="#footer">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="imageContainer">
+      <div class="svgImagesContainer">
+        <img src="images/myPicture.png" class="svgMyself" />
+        <p>Hi, My name is <span class="highlight">Rafał</span></p>
+        <p>
+          & I'm 24y old <span class="highlight">FrontEnd Developer</span> from
+          Poland
+        </p>
+        <a href="#projects"><i class="fas fa-chevron-down"></i></a>
+      </div>
+
+    </div>
+
+    <section id="projects">
+      <h1>Frontend Projects</h1>
+      <div class="projectsContainer">
+        <div data-aos="fade-left" class="projectBox">
+          <div class="imgBox firstBox">
+            <img src="images/memoryCardGame.jpg" />
+          </div>
+          <div class="content">
+            <h2>Memory Card Game</h2>
+            <p>
+              Simple memory card game with time and score mechanism. Coded in
+              vanilla JavaScript.
+            </p>
+            <a href="memordyCardGame/index.html" target="_blank">Try it</a>
+          </div>
+        </div>
+        <div class="projectBox">
+          <div class="imgBox secondBox">
+            <img src="images/worldwideNews.jpg" />
+          </div>
+          <div class="content">
+            <h2>News Browser</h2>
+            <p>
+              Basic React project with axios, React hooks and more.
+            </p>
+            <a href="https://coortesan.github.io/news-browser/" target="_blank">Test app</a>
+          </div>
+        </div>
+        <div data-aos="fade-right" class="projectBox">
+          <div class="imgBox thirdBox">
+            <img src="images/speedTypingGame.jpg" />
+          </div>
+          <div class="content">
+            <h2>Speed Typing Game</h2>
+            <p>
+              Game created in Vanilla JS. Try to get the best time and discover English words by playing!
+            </p>
+            <a href="speedTypeAppVanillaJS/index.html" target="_blank">Try it</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="aboutMe" id="bio">
+      <img data-aos="fade-in" class="svgSkillsImg" src="./images/svgSkillsImage2.svg" alt="my skill presentation" />
+      <img class="svgSkillsImgMobile" src="./images/svgSkillsImageMobile2.svg"
+        alt="my skill presentation - mobile version" />
+    </section>
+    <section class="lightboxGallery">
+      <h1>Graphic Projects</h1>
+      <div class="gallery">
+        <div data-aos="zoom-in" class="hoverZoom" data-tilt>
+          <a class="example-image-link" href="./images/picture0.jpg" data-lightbox="example-set"
+            data-title="Flyer project"><img class="example-image" src="./images/picture0Thumb.jpg"
+              alt="showcase picture thumbnail" /></a>
+        </div>
+        <div data-aos="zoom-in" class="hoverZoom biggerImage" data-tilt>
+          <a class="example-image-link" href="./images/picture2.jpg" data-lightbox="example-set"
+            data-title="Background blend project"><img class="example-image" src="./images/picture2Thumb.png"
+              alt="image thumbnail" /></a>
+        </div>
+        <div data-aos="zoom-in" class="hoverZoom biggestImage" data-tilt>
+          <a class="example-image-link" href="./images/picture1.jpg" data-lightbox="example-set"
+            data-title="Photo manipulation project"><img class="example-image bigThumb" src="./images/picture1Thumb.png"
+              alt="image thumbnail" />
+            <img class="example-image smallThumb" src="./images/picture1Thumb300x300.png" alt="image thumbnail" /></a>
+        </div>
+        <div data-aos="zoom-in" class="hoverZoom biggerImage" data-tilt>
+          <a class="example-image-link" href="./images/picture3.jpg" data-lightbox="example-set"
+            data-title="Logo project"><img class="example-image" src="./images/picture3Thumb.jpg"
+              alt="image thumbnail" /></a>
+        </div>
+        <div data-aos="zoom-in" class="hoverZoom" data-tilt>
+          <a class="example-image-link" href="./images/picture4.jpg" data-lightbox="example-set"
+            data-title="Buisness card project"><img class="example-image" src="./images/picture4Thumb.jpg"
+              alt="image thumbnail" /></a>
+        </div>
+      </div>
+    </section>
+      <footer id="footer">
+      <div class="socialsContainer">
+        <a href="http://www.linkedin.com/in/tutak-rafal" target="_blank">
+          <span class="iconLinkedin"><i class="fab fa-linkedin-in"></i></span>Linkedin</a>
+        <a href="https://www.deviantart.com/coortesan" target="_blank"><span class="iconDeviantart"><i
+              class="fab fa-deviantart"></i></span>DeviantArt</a>
+        <a href="https://www.facebook.com/profile.php?id=100004643374104" target="_blank"><span class="iconFacebook"><i
+              class="fab fa-facebook-f"></i></span>Facebook</a>
+      </div>
+      <div class="footerTextRight">Designed with <img class="heartSvg" src="images/heartFooter.svg" /> by Rafał Tutak
+        &copy 2020</Designed>
+      </div>
+    </footer>
+
+    <script src="scripts/lightbox-plus-jquery.min.js"></script>
+    <script src="./scripts/tilt.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1500,
+        offset: 400,
+        disable: 'mobile',
+      });
+    </script>
+</body>
+
+</html>

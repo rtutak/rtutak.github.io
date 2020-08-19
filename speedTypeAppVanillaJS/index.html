@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Speed Typing Game</title>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"
+      defer
+    ></script>
+    <script src="./scripts/main.js" defer></script>
+    <script src="./scripts/highScorePrint.js" defer></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"
+      defer
+    ></script>
+    <script src="./scripts/gsap.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="container__logo">
+        <div class="container__logo__stars"></div>
+        <div class="container__logo__text"></div>
+      </div>
+      <header>
+        <button class="container__start__button">Start the game</button>
+      </header>
+      <main>
+        <div class="container__textToMatch"></div>
+        <div class="container__input">
+          <label class="label" for="inputText">Type the displayed text</label>
+          <input
+            type="text"
+            name="inputText"
+            id="container__inputText"
+            autocomplete="off"
+            disabled
+          />
+        </div>
+        <div class="container__time">
+          Your time: <span class="container_time--value">0</span> seconds
+        </div>
+        <div class="container__progress">
+          Progress: <span class="container_progress--value">0</span>/10
+        </div>
+        <div class="container__highscores">
+          <button class="contaniner__highscores__button">
+            Show Highscores
+          </button>
+
+          <section class="section__highscores__list">
+            <ul class="section__highscores__list__ul"></ul>
+          </section>
+        </div>
+        <div class="section__highscores__hiddenMsg">
+          Reminder: You have to start the game before checking highscores
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

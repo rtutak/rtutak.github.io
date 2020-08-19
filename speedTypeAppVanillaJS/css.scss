@@ -1,0 +1,224 @@
+$fontColor: white;
+$whiteColor: #fdfffc;
+
+@mixin gradientBg() {
+  background: rgb(22, 13, 36);
+  background: linear-gradient(
+    0deg,
+    rgba(22, 13, 36, 1) 0%,
+    rgba(23, 23, 41, 1) 50%,
+    rgba(20, 12, 33, 1) 100%
+  );
+}
+html {
+  width: 100vw;
+  height: 100vh;
+  @include gradientBg();
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Red Rose", cursive;
+  font-size: 16px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .container__logo {
+    position: absolute;
+    top: 30px;
+    width: 350px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .container__logo__stars {
+    width: 100px;
+    margin-top: -20px;
+    height: 50px;
+    background: url(./images/logoStars.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .container__logo__text {
+    width: 400px;
+    margin-top: -40px;
+    height: 200px;
+    background: url(./images/logoWithoutEffect.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+.container__start__button {
+  margin-top: 200px;
+  width: 300px;
+  height: 70px;
+  background: url(./images/button.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  font-size: 18px;
+  border-radius: 10px;
+  color: $whiteColor;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.label {
+  color: $fontColor;
+  letter-spacing: 1.5px;
+  font-size: 10px;
+  text-align: center;
+  padding: 5px;
+  visibility: hidden;
+}
+.container__textToMatch {
+  height: 50px;
+  width: 400px;
+  text-align: center;
+  font-size: 28px;
+  color: $whiteColor;
+  letter-spacing: 1.5px;
+}
+.container__input {
+  display: flex;
+  flex-direction: column;
+  #container__inputText {
+    background: url(./images/inputBg.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 400px;
+    height: 100px;
+    text-align: center;
+    color: $whiteColor;
+    border: none;
+    font-size: 28px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+.contaniner__highscores__button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: $whiteColor;
+  transition: 200ms ease-in-out;
+  &:hover {
+    letter-spacing: 1.2px;
+  }
+}
+.container__time,
+.container__progress {
+  text-align: center;
+  color: $whiteColor;
+  padding: 5px;
+}
+.container__highscores {
+  text-align: center;
+  height: 230px;
+}
+.section__highscores__list {
+  visibility: visible;
+  color: $whiteColor;
+  padding: 20px;
+  margin-top: 20px;
+  background: url(./images/highScoresBg.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.container__time {
+  visibility: hidden;
+}
+.section__highscores__hiddenMsg {
+  visibility: hidden;
+  color: $whiteColor;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%);
+  width: 400px;
+  text-align: center;
+}
+.section__highscores__list__ul {
+  text-align: left;
+  margin: 0 auto;
+  width: 150px;
+  list-style-type: none;
+  li {
+    font-family: monospace;
+    text-align: center;
+    margin-top: 5px;
+    &::first-letter {
+      padding: 5px;
+      font-family: monospace;
+    }
+  }
+}
+.arrow {
+  display: inline-block;
+  width: 20px;
+  height: 12px;
+  padding: 0 5px 0 5px;
+  margin: 0 10px 0 10px;
+  background: url(./images/arrowIcon.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  position: relative;
+}
+.score {
+  position: absolute;
+  display: inline-block;
+  text-align: right;
+}
+@media (max-width: 600px) {
+  .container {
+    .container__logo__text {
+      width: 320px;
+      height: 120px;
+    }
+    .container__logo__stars {
+      width: 60px;
+      margin-top: 0px;
+      height: 40px;
+    }
+    .container__logo {
+      top: 10px;
+    }
+  }
+  .container__textToMatch {
+    height: 50px;
+    width: 350px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  #container__inputText {
+    width: 300px;
+    height: 80px;
+    text-align: center;
+    color: $whiteColor;
+    border: none;
+    font-size: 28px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+  .section__highscores__hiddenMsg {
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 300px;
+    text-align: center;
+  }
+}

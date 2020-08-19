@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700i&display=swap&subset=latin-ext"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Memory Card Game</h1>
+      <section class="cardsContainer">
+        <div class="singleCard" data-color="firstColor">
+          <img class="frontSide" src="img/cardBlue.png" alt="frontSide" />
+          <img class="backSide" src="img/cardBack.png" alt="backSide" />
+        </div>
+        <div class="singleCard" data-color="firstColor">
+          <img class="frontSide" src="img/cardBlue.png" alt="frontSide" />
+          <img class="backSide" src="img/cardBack.png" alt="backSide" />
+        </div>
+
+        <div class="singleCard" data-color="secondColor">
+          <img class="frontSide" src="img/cardBrown.png" alt="frontSide" />
+          <img class="backSide" src="img/cardBack.png" alt="backSide" />
+        </div>
+        <div class="singleCard" data-color="secondColor">
+          <img class="frontSide" src="img/cardBrown.png" alt="frontSide" />
+          <img class="backSide" src="img/cardBack.png" alt="backSide" />
+        </div>
+
+        <div class="singleCard" data-color="thirdColor">
+          <img class="frontSide" src="img/cardPink.png" alt="frontSide" />
+          <img class="backSide" src="img/cardBack.png" alt="backSide" />
+        </div>
+        <div class="singleCard" data-color="thirdColor">
+          <img class="frontSide" src="img/cardPink.png" alt="frontSide" />
+          <img class="backSide" src="img/cardBack.png" alt="backSide" />
+        </div>
+
+        <div class="singleCard" data-color="forthColor">
+          <img class="frontSide" src="img/cardWhite.png" alt="frontSide" />
+          <img class="backSide" src="img/cardBack.png" alt="backSide" />
+        </div>
+        <div class="singleCard" data-color="forthColor">
+          <img class="frontSide" src="img/cardWhite.png" alt="frontSide" />
+          <img class="backSide" src="img/cardBack.png" alt="backSide" />
+        </div>
+
+        <div class="singleCard" data-color="fifthColor">
+          <img class="frontSide" src="img/cardYellow.png" alt="frontSide" />
+          <img class="backSide" src="img/cardBack.png" alt="backSide" />
+        </div>
+        <div class="singleCard" data-color="fifthColor">
+          <img class="frontSide" src="img/cardYellow.png" alt="frontSide" />
+          <img class="backSide" src="img/cardBack.png" alt="backSide" />
+        </div>
+
+        <div class="singleCard" data-color="sixthColor">
+          <img class="frontSide" src="img/cardPurple.png" alt="frontSide" />
+          <img class="backSide" src="img/cardBack.png" alt="backSide" />
+        </div>
+        <div class="singleCard" data-color="sixthColor">
+          <img class="frontSide" src="img/cardPurple.png" alt="frontSide" />
+          <img class="backSide" src="img/cardBack.png" alt="backSide" />
+        </div>
+      </section>
+      <h2>
+        Moves: <span class="movesCount">0</span> Time:
+        <span class="timer">0 secs</span>
+      </h2>
+    </div>
+    <section>
+      <div id="overlay">
+        <div id="overlayBox">
+          <h1>Game Finshed</h1>
+          <span id="rightSide"><i class="far fa-times-circle"></i></span>
+          <h2>Score:</h2>
+          Your moves: <span class="movesCount">0</span> Your time:
+          <span class="timer">0 secs</span>
+          <!-- Star rating -->
+          <span class="score">
+            <div class="starsBorder">
+              <span class="starsIcons">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+              </span>
+            </div>
+          </span>
+          <!--End Star Rating -->
+        </div>
+      </div>
+    </section>
+
+    <script src="js.js"></script>
+  </body>
+</html>
