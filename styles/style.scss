@@ -11,6 +11,12 @@ $navColor: #050505;
   align-items: center;
   justify-content: center;
 }
+@mixin boxShadowHighlight {
+  box-shadow: 0px 4px 10px 0px rgba(105, 201, 208, 1);
+}
+@mixin boxShadowNormal {
+  box-shadow: 0px 4px 9px 0px rgb(165, 165, 165);
+}
 @keyframes glovingArrows {
   0% {
     opacity: 0;
@@ -170,8 +176,11 @@ html {
   background: $primaryColor;
   overflow: hidden;
   color: $secondaryColor;
-  box-shadow: 0px 4px 9px 0px rgb(165, 165, 165);
+  @include boxShadowHighlight();
   border-radius: 5px;
+  &:hover {
+    @include boxShadowNormal();
+  }
 }
 .projectBox .imgBox {
   position: absolute;
@@ -182,16 +191,24 @@ html {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   transition: 0.5s;
   transition-delay: 0.5s;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 .projectBox:hover .firstBox {
   clip-path: polygon(10% 5%, 90% 5%, 90% 50%, 10% 60%);
   transition-delay: 0s;
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
 }
 .projectBox:hover .secondBox {
   clip-path: polygon(10% 5%, 90% 5%, 90% 60%, 10% 60%);
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
 }
 .projectBox:hover .thirdBox {
   clip-path: polygon(10% 5%, 90% 5%, 90% 60%, 11% 50%);
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
 }
 .projectsContainer .projectBox .content {
   position: absolute;
@@ -252,10 +269,6 @@ html {
     color: $primaryColor;
   }
 }
-.arrowContainer {
-  display: flex;
-  justify-content: center;
-}
 .aboutMe {
   display: flex;
   justify-content: center;
@@ -291,11 +304,69 @@ html {
   width: 100%;
   position: relative;
   .hoverZoom {
-    box-shadow: 0px 4px 9px 0px rgb(165, 165, 165);
+    @include boxShadowHighlight();
     height: 250px;
     width: 250px;
-    border-radius: 5px;
     margin: 7px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    &:hover {
+      @include boxShadowNormal();
+    }
+  }
+  /* Shine */
+  .hoverEffect {
+    overflow: hidden;
+  }
+  .hoverEffect figure img {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    -webkit-transition: 0.75s ease-in-out;
+    transition: 0.75s ease-in-out;
+    &:hover {
+      -webkit-filter: grayscale(0);
+      filter: grayscale(0);
+    }
+  }
+  .hoverEffect figure {
+    position: relative;
+    &::before {
+      position: absolute;
+      top: 0;
+      left: -75%;
+      z-index: 11;
+      display: block;
+      content: "";
+      width: 50%;
+      height: 100%;
+      background: -webkit-linear-gradient(
+        left,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.3) 100%
+      );
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.3) 100%
+      );
+      -webkit-transform: skewX(-25deg);
+      transform: skewX(-25deg);
+    }
+  }
+  .hoverEffect figure:hover::before {
+    -webkit-animation: shine 0.75s;
+    animation: shine 0.75s;
+  }
+  @-webkit-keyframes shine {
+    100% {
+      left: 125%;
+    }
+  }
+  @keyframes shine {
+    100% {
+      left: 125%;
+    }
   }
   .biggerImage {
     width: 300px;

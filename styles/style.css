@@ -237,9 +237,14 @@ html {
   background: #080808;
   overflow: hidden;
   color: white;
+  -webkit-box-shadow: 0px 4px 10px 0px #69c9d0;
+          box-shadow: 0px 4px 10px 0px #69c9d0;
+  border-radius: 5px;
+}
+
+.projectBox:hover {
   -webkit-box-shadow: 0px 4px 9px 0px #a5a5a5;
           box-shadow: 0px 4px 9px 0px #a5a5a5;
-  border-radius: 5px;
 }
 
 .projectBox .imgBox {
@@ -254,6 +259,8 @@ html {
   transition: 0.5s;
   -webkit-transition-delay: 0.5s;
           transition-delay: 0.5s;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 
 .projectBox:hover .firstBox {
@@ -261,16 +268,22 @@ html {
           clip-path: polygon(10% 5%, 90% 5%, 90% 50%, 10% 60%);
   -webkit-transition-delay: 0s;
           transition-delay: 0s;
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
 }
 
 .projectBox:hover .secondBox {
   -webkit-clip-path: polygon(10% 5%, 90% 5%, 90% 60%, 10% 60%);
           clip-path: polygon(10% 5%, 90% 5%, 90% 60%, 10% 60%);
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
 }
 
 .projectBox:hover .thirdBox {
   -webkit-clip-path: polygon(10% 5%, 90% 5%, 90% 60%, 11% 50%);
           clip-path: polygon(10% 5%, 90% 5%, 90% 60%, 11% 50%);
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
 }
 
 .projectsContainer .projectBox .content {
@@ -355,15 +368,6 @@ html {
   color: #080808;
 }
 
-.arrowContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
 .aboutMe {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -418,15 +422,75 @@ html {
   overflow: hidden;
   width: 100%;
   position: relative;
+  /* Shine */
 }
 
 .gallery .hoverZoom {
-  -webkit-box-shadow: 0px 4px 9px 0px #a5a5a5;
-          box-shadow: 0px 4px 9px 0px #a5a5a5;
+  -webkit-box-shadow: 0px 4px 10px 0px #69c9d0;
+          box-shadow: 0px 4px 10px 0px #69c9d0;
   height: 250px;
   width: 250px;
-  border-radius: 5px;
   margin: 7px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.gallery .hoverZoom:hover {
+  -webkit-box-shadow: 0px 4px 9px 0px #a5a5a5;
+          box-shadow: 0px 4px 9px 0px #a5a5a5;
+}
+
+.gallery .hoverEffect {
+  overflow: hidden;
+}
+
+.gallery .hoverEffect figure img {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  -webkit-transition: 0.75s ease-in-out;
+  transition: 0.75s ease-in-out;
+}
+
+.gallery .hoverEffect figure img:hover {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+}
+
+.gallery .hoverEffect figure {
+  position: relative;
+}
+
+.gallery .hoverEffect figure::before {
+  position: absolute;
+  top: 0;
+  left: -75%;
+  z-index: 11;
+  display: block;
+  content: "";
+  width: 50%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.3)));
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+  -webkit-transform: skewX(-25deg);
+  transform: skewX(-25deg);
+}
+
+.gallery .hoverEffect figure:hover::before {
+  -webkit-animation: shine 0.75s;
+  animation: shine 0.75s;
+}
+
+@-webkit-keyframes shine {
+  100% {
+    left: 125%;
+  }
+}
+
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
 }
 
 .gallery .biggerImage {
