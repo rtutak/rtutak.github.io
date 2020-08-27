@@ -133,7 +133,7 @@ html {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  background-color: #080808;
+  background-color: #101010;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -234,7 +234,7 @@ html {
   width: 280px;
   height: 400px;
   margin: 5px;
-  background: #080808;
+  background: #101010;
   overflow: hidden;
   color: white;
   -webkit-box-shadow: 0px 4px 10px 0px #69c9d0;
@@ -312,7 +312,7 @@ html {
 .projectsContainer .projectBox .content a {
   text-decoration: none;
   background: #69c9d0;
-  color: #080808;
+  color: #101010;
   padding: 5px;
   display: inline-block;
   margin: 5px;
@@ -365,7 +365,7 @@ html {
   letter-spacing: 2px;
   margin: 50px 0 0 0;
   font-weight: 300;
-  color: #080808;
+  color: #101010;
 }
 
 .aboutMe {
@@ -382,16 +382,15 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background: #080808;
-  background-color: #080808;
+  background-color: #101010;
   width: 100%;
   height: 650px;
   position: relative;
 }
 
 .aboutMe .svgSkillsImg {
-  width: 80%;
-  height: 80%;
+  width: 90%;
+  height: 90%;
 }
 
 .aboutMe .svgSkillsImgMobile {
@@ -402,7 +401,7 @@ html {
   text-align: center;
   letter-spacing: 2px;
   margin: 50px 0 20px 0;
-  color: #080808;
+  color: #101010;
   font-weight: 300;
 }
 
@@ -539,21 +538,6 @@ footer .footerTextRight {
   font-weight: 300;
 }
 
-footer a {
-  font-size: 20px;
-  text-decoration: none;
-  font-weight: 300;
-  padding: 5px;
-  color: white;
-  font-weight: 300;
-}
-
-footer a:hover {
-  letter-spacing: 1.1px;
-  -webkit-transition: ease-in-out 300ms;
-  transition: ease-in-out 300ms;
-}
-
 footer .heartSvg {
   width: 20px;
   height: 20px;
@@ -569,22 +553,45 @@ footer .heartSvg {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 140px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 160px;
 }
 
 .socialsContainer a {
-  display: inline-block;
-  -webkit-transition: 300ms;
-  transition: 300ms;
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: 300;
+  padding: 5px;
+  color: white;
+  font-weight: 300;
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+}
+
+.socialsContainer a:hover {
+  letter-spacing: 1.5px;
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+}
+
+.socialsContainer .oneLineAnchor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 5px 0 5px 0;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
 }
 
 .iconLinkedin,
 .iconDeviantart,
-.iconFacebook {
-  margin: 2px;
+.iconGit {
   font-size: 20px;
+  margin: 0px 7px 0 7px;
   width: 20px;
-  display: inline-block;
   color: white;
 }
 
@@ -749,15 +756,6 @@ footer .heartSvg {
     width: 100%;
     text-align: center;
   }
-  footer a {
-    font-size: 20px;
-    text-decoration: none;
-    font-weight: 300;
-    color: #f4f4f3;
-  }
-  footer a:hover {
-    color: white;
-  }
   footer .heartSvg {
     width: 20px;
     height: 20px;
@@ -765,7 +763,7 @@ footer .heartSvg {
   }
   .socialsContainer {
     margin-top: 90px;
-    width: 150px;
+    width: 180px;
   }
   .socialsContainer a {
     padding: 10px;
