@@ -25,6 +25,25 @@
    .stars {
         visibility:hidden;
     }
+	.bounceElement {
+		 transform-origin: bottom;
+		animation-duration: 2s;
+        animation-iteration-count: 3;
+		animation-delay: 1s;
+	}
+	.bounceAnimation {
+        animation-name: bounceAnimation;
+        animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+    }
+    @keyframes bounceAnimation {
+        0%   { transform: scale(1,1)      translateY(0); }
+        10%  { transform: scale(1.05,.95)   translateY(0); }
+        30%  { transform: scale(.95,1.05)   translateY(-5px); }
+        50%  { transform: scale(1.05,.95) translateY(0); }
+        57%  { transform: scale(1,1)      translateY(-px); }
+        64%  { transform: scale(1,1)      translateY(0); }
+        100% { transform: scale(1,1)      translateY(0); }
+    }
 </style>
 <g>
 	<circle class="st0" cx="440.8" cy="473.7" r="348.9"/>
@@ -1472,7 +1491,7 @@ SUVORK5CYII=" transform="matrix(1 0 0 1 303 705)">
         <ellipse transform="matrix(0.7071 -0.7071 0.7071 0.7071 -459.686 549.2632)" class="st2 blackBgEng" cx="433.2" cy="829.5" rx="114.5" ry="114.5"/>
 	</g>
 </g>
-<g id="js">
+<g id="js" class="bounceElement bounceAnimation">
 	<path class="st4 frontHandlerJs" d="M390.4,372c-3.7,0-6.8,3.1-6.8,6.8v93.3c0,3.7,3.1,6.8,6.8,6.8h93.3c3.7,0,6.8-3.1,6.8-6.8v-93.3
 		c0-3.7-3.1-6.8-6.8-6.8H390.4z M390.4,377.1h93.3c0.9,0,1.7,0.8,1.7,1.7v93.3c0,0.9-0.8,1.7-1.7,1.7h-93.3c-0.9,0-1.7-0.8-1.7-1.7
 		v-93.3C388.7,377.9,389.5,377.1,390.4,377.1z M432,420.4v32c0,4.9-1.9,6.2-5.1,6.2c-3.4,0-5.7-2.1-7.3-4.8l-8,4.8
@@ -1843,6 +1862,28 @@ kpGRkZGRkZGRkZGRkZFxGP9PgAEAPXbZ++mKOkkAAAAASUVORK5CYII=" transform="matrix(1 0 
 </g>
 
 <script type="text/javascript"><![CDATA[
+
+
+function isInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+
+    );
+}
+
+const box = document.querySelector('#react');
+
+document.addEventListener('scroll', function () {
+
+ if(isInViewport(box))
+ {
+	document.querySelector(".bounceAnimation").classList.toggle("bounceElement");
+ }
+    });
 
 
 document.querySelector("#react").addEventListener("click", function (evt) {
