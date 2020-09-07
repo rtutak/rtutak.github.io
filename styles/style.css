@@ -386,10 +386,6 @@ html {
           justify-content: center;
 }
 
-.svgOpacity {
-  opacity: 0;
-}
-
 .aboutMe {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -799,7 +795,7 @@ footer .heartSvg {
     display: none;
   }
   .svgImagesContainer .svgMyself {
-    width: 50%;
+    max-width: 50%;
     height: auto;
     margin: 0 auto;
   }
