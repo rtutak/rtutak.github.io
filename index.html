@@ -39,7 +39,7 @@
     <div class="imageContainer">
       <div class="svgImagesContainer">
         <img src="images/myPicture.png" class="svgMyself" />
-        <p>Hi, My name is <span class="highlight">Rafał</span></p>
+        <p>Hi, My name is <span class="highlight"><span class="nameAnimation">Rafał</span></span></p>
         <p>
           & I'm 24y old <span class="highlight">FrontEnd Developer</span> from
           Poland
@@ -94,7 +94,17 @@
     <section class="aboutMe" id="bio">
       <img class="svgSkillsImgMobile" src="./images/svgSkillsImageMobile2.svg"
         alt="my skill presentation - mobile version" /> 
-      <object data-aos="fade-in" type="image/svg+xml" data="./images/skillCircle.svg" class="svgSkillsImg"></object>
+      <div class="svgContainer">
+        <object data-aos="zoom-in"  type="image/svg+xml" data="./images/skillCircleBase.svg" class="svgSkillsImg"></object>
+        <object data-aos="zoom-in-left" data-aos-easing="ease-in-out" type="image/svg+xml" data="./images/skillCircleRight.svg" class="svgSkillsImg"></object>
+        <object data-aos="zoom-in-right" data-aos-easing="ease-in-out" type="image/svg+xml" data="./images/skillCircleLeft.svg" class="svgSkillsImg"></object>
+        <object  data-aos="opacity-animation" data-aos-easing="ease-in-out" data-aos-delay="900" type="image/svg+xml" data="./images/skillCircleTextReact.svg" class="svgSkillsImg"></object>
+        <object  data-aos="opacity-animation" data-aos-easing="ease-in-out" data-aos-delay="1200" type="image/svg+xml" data="./images/skillCircleTextCSS.svg" class="svgSkillsImg"></object>
+        <object  data-aos="opacity-animation" data-aos-easing="ease-in-out" data-aos-delay="1500" type="image/svg+xml" data="./images/skillCircleTextGit.svg" class="svgSkillsImg"></object>
+        <object  data-aos="opacity-animation" data-aos-easing="ease-in-out" data-aos-delay="1800" type="image/svg+xml" data="./images/skillCircleTextAdobe.svg" class="svgSkillsImg"></object>
+        <object  data-aos="opacity-animation" data-aos-easing="ease-in-out" data-aos-delay="2100" type="image/svg+xml" data="./images/skillCircleTextNode.svg" class="svgSkillsImg"></object>
+        <object  data-aos="opacity-animation" data-aos-easing="ease-in-out" data-aos-delay="2400" type="image/svg+xml" data="./images/skillCircleTextEnglish.svg" class="svgSkillsImg"></object>
+      </div>
     </section>
     <section class="lightboxGallery">
       <h1>Graphic Projects</h1>
@@ -175,6 +185,7 @@
       AOS.init({
         duration: 1500,
         offset: 400,
+        once:true,
         disable: 'mobile',
       });
     </script>
