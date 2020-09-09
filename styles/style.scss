@@ -2,7 +2,7 @@ $primaryColor: #101010;
 $secondaryColor: white;
 $highlightColor2: #69c9d0;
 $backgroundColor: #efefef;
-
+@import "spinningCircle";
 @mixin centerFlex {
   display: flex;
   align-items: center;
@@ -49,6 +49,36 @@ body {
 html {
   min-height: 100%;
   position: relative;
+}
+.loadingContainer {
+  z-index: 999;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $primaryColor;
+  @include centerFlex();
+  visibility: visible;
+  color: white;
+  span {
+    font-size: 40px;
+  }
+}
+.hidden {
+  animation: slideDown 1.5s;
+  animation-fill-mode: forwards;
+  span {
+    opacity: 0;
+  }
+}
+@keyframes slideDown {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(100%);
+  }
 }
 .highlight {
   color: $highlightColor2;
@@ -126,7 +156,7 @@ html {
     cursor: pointer;
     animation: glovingArrows 3s infinite;
     transition: 0.5s ease-out;
-    margin-top: 20px;
+    margin-top: 10px;
     &:hover {
       color: $secondaryColor;
       transition: 0.5s ease-in;
@@ -139,13 +169,16 @@ html {
   flex-direction: column;
   height: 80%;
   @include centerFlex();
+  .introduceText {
+    margin-top: 20px;
+  }
   .img {
     margin: 0 auto;
     margin-top: 20px;
     box-shadow: 0px 4px 9px 0px rgb(165, 165, 165);
   }
   p {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 300;
     text-align: center;
     line-height: 22px;

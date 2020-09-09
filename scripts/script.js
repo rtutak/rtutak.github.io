@@ -5,6 +5,10 @@ const hamburgerHandler = document.querySelector(".hamburger");
 const exitOverlayHandler = document.querySelector(".exitOverlay");
 const liHandler = document.querySelectorAll(".overlayNav li");
 
+window.addEventListener("load", () => {
+  document.querySelector(".loadingContainer").classList.add("hidden");
+});
+
 overlayToggle = () => {
   let status = window
     .getComputedStyle(overlayHandler)
