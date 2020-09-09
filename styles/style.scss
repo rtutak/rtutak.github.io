@@ -1,23 +1,22 @@
 $primaryColor: #101010;
 $secondaryColor: white;
 $highlightColor2: #69c9d0;
-$thirdColor: #f4f4f3;
 $backgroundColor: #efefef;
-$navColor: #050505;
 
 @mixin centerFlex {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+//Aos lib custom animation
 [data-aos="opacity-animation"] {
   opacity: 0;
   transition-property: transform, opacity;
-
   &.aos-animate {
     opacity: 1;
   }
 }
+
 @mixin boxShadowHighlight {
   box-shadow: 0px 4px 10px 0px rgba(105, 201, 208, 1);
 }
@@ -66,58 +65,53 @@ html {
   z-index: 10;
   display: none;
 }
-.options {
+.basicNav {
   position: relative;
   top: 0;
   left: 0;
   z-index: 10;
-}
-.svgLogo {
-  width: 45px;
-  height: 45px;
-  margin: 0 20px 0 10px;
-}
-.navContainer {
-  @include centerFlex();
-  background-color: transparent;
-  height: 60px;
-  li {
-    text-decoration: none;
-    margin-right: 20px;
-    list-style-type: none;
+  ul {
+    @include centerFlex();
+    background-color: transparent;
+    height: 60px;
+    li {
+      text-decoration: none;
+      margin-right: 20px;
+      list-style-type: none;
+    }
+    a {
+      font-size: 16px;
+      text-decoration: none;
+      color: white;
+      text-shadow: 1px 1px black;
+      margin: 0 20px 0 20px;
+      position: relative;
+      display: inline-block;
+      text-transform: uppercase;
+      &:after {
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background: white;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+      }
+    }
+    a:hover:after {
+      width: 100%;
+      left: 0;
+    }
   }
 }
-.navContainer a {
-  font-size: 16px;
-  text-decoration: none;
-  color: white;
-  text-shadow: 1px 1px black;
-  margin: 0 20px 0 20px;
-  position: relative;
-  display: inline-block;
-  text-transform: uppercase;
-  &:after {
-    background: none repeat scroll 0 0 transparent;
-    bottom: 0;
-    content: "";
-    display: block;
-    height: 2px;
-    left: 50%;
-    position: absolute;
-    background: white;
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
-    width: 0;
-  }
-}
-.navContainer a:hover:after {
-  width: 100%;
-  left: 0;
-}
-.imageContainer,
-.aboutMe {
+.introduceContainer,
+.aboutMeContainer {
   position: relative;
 }
-.imageContainer {
+.introduceContainer {
   margin-top: -60px;
   user-select: none;
   background-color: $primaryColor;
@@ -145,12 +139,10 @@ html {
   flex-direction: column;
   height: 80%;
   @include centerFlex();
-  .svgMyself {
+  .img {
     margin: 0 auto;
     margin-top: 20px;
-    img {
-      box-shadow: 0px 4px 9px 0px rgb(165, 165, 165);
-    }
+    box-shadow: 0px 4px 9px 0px rgb(165, 165, 165);
   }
   p {
     font-size: 18px;
@@ -158,6 +150,15 @@ html {
     text-align: center;
     line-height: 22px;
     color: $secondaryColor;
+  }
+}
+#projects {
+  h1 {
+    text-align: center;
+    letter-spacing: 2px;
+    margin: 50px 0 0 0;
+    font-weight: 300;
+    color: $primaryColor;
   }
 }
 .projectsContainer {
@@ -193,21 +194,21 @@ html {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
 }
-.projectBox:hover .firstBox {
-  clip-path: polygon(10% 5%, 90% 5%, 90% 50%, 10% 60%);
+.projectBox:hover .firstBox,
+.projectBox:hover .secondBox,
+.projectBox:hover .thirdBox {
   transition-delay: 0s;
   -webkit-filter: grayscale(0);
   filter: grayscale(0);
 }
+.projectBox:hover .firstBox {
+  clip-path: polygon(10% 5%, 90% 5%, 90% 50%, 10% 60%);
+}
 .projectBox:hover .secondBox {
   clip-path: polygon(10% 5%, 90% 5%, 90% 60%, 10% 60%);
-  -webkit-filter: grayscale(0);
-  filter: grayscale(0);
 }
 .projectBox:hover .thirdBox {
   clip-path: polygon(10% 5%, 90% 5%, 90% 60%, 11% 50%);
-  -webkit-filter: grayscale(0);
-  filter: grayscale(0);
 }
 .projectsContainer .projectBox .content {
   position: absolute;
@@ -259,23 +260,7 @@ html {
   transform: translateY(0);
   transition-delay: 0.5s;
 }
-
-#projects {
-  h1 {
-    text-align: center;
-    letter-spacing: 2px;
-    margin: 50px 0 0 0;
-    font-weight: 300;
-    color: $primaryColor;
-  }
-}
-.svgContainer {
-  width: 90%;
-  height: 90%;
-  position: absolute;
-  @include centerFlex();
-}
-.aboutMe {
+.aboutMeContainer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -294,7 +279,13 @@ html {
     display: none;
   }
 }
-.lightboxGallery {
+.svgSkillsContainer {
+  width: 90%;
+  height: 90%;
+  position: absolute;
+  @include centerFlex();
+}
+.galleryContainer {
   h1 {
     text-align: center;
     letter-spacing: 2px;
@@ -394,7 +385,6 @@ html {
 .smallThumb {
   display: none;
 }
-
 footer {
   display: flex;
   align-items: center;
@@ -462,6 +452,27 @@ footer {
   bottom: 0;
   display: none;
   overflow: hidden;
+  ul {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    list-style-type: none;
+    li {
+      margin: 40px 0 40px 0;
+      text-align: center;
+      a {
+        color: $secondaryColor;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 30px;
+        &:hover {
+          opacity: 0.8;
+          transition: all 0.4s ease;
+        }
+      }
+    }
+  }
   .exitOverlay {
     position: absolute;
     top: -20px;
@@ -469,27 +480,6 @@ footer {
     font-size: 40px;
     color: $highlightColor2;
     cursor: pointer;
-  }
-}
-.overlayNav ul {
-  position: fixed;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  list-style-type: none;
-}
-.overlayNav li {
-  margin: 40px 0 40px 0;
-  text-align: center;
-}
-.overlayNav li a {
-  color: $secondaryColor;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 30px;
-  &:hover {
-    opacity: 0.8;
-    transition: all 0.4s ease;
   }
 }
 /* MEDIA QUERIES */
@@ -519,10 +509,10 @@ footer {
   }
 }
 @media only screen and (max-width: 670px) {
-  .options {
+  .basicNav {
     display: none;
   }
-  .imageContainer {
+  .introduceContainer {
     margin-top: 0px;
     i {
       transition: 0.5s ease-out;
@@ -548,7 +538,7 @@ footer {
     text-align: center;
     line-height: 50px;
   }
-  .aboutMe {
+  .aboutMeContainer {
     height: 500px;
     .svgSkillsImg {
       display: none;
@@ -581,7 +571,6 @@ footer {
       transform: translateY(5px);
     }
   }
-
   footer {
     flex-direction: column;
     background-image: url(../images/footerImgMobile.svg);
@@ -611,7 +600,7 @@ footer {
   }
 }
 @media only screen and (max-height: 440px) {
-  .imageContainer {
+  .introduceContainer {
     i {
       display: none;
     }
@@ -629,7 +618,7 @@ footer {
   }
 }
 @media only screen and (max-width: 350px) {
-  .imageContainer {
+  .introduceContainer {
     p {
       font-size: 14px;
     }
