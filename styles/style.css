@@ -763,7 +763,7 @@ footer {
   width: 100%;
 }
 
-footer .footerTextRight {
+footer .footerTextCopyright {
   margin-top: 20px;
   text-align: right;
   color: white;
@@ -848,6 +848,16 @@ footer .heartSvg {
 .iconGit {
   font-size: 20px;
   width: 20px;
+}
+
+.textFooterAbsolute {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  color: #69c9d0;
+  font-size: 26px;
 }
 
 .overlayNav {
@@ -999,6 +1009,9 @@ footer .heartSvg {
         -ms-flex-direction: column;
             flex-direction: column;
     background-image: url(../images/footerImgMobile.svg);
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     background-position: center;
   }
   footer div {
@@ -1006,7 +1019,7 @@ footer .heartSvg {
     width: 90%;
     font-weight: 300;
   }
-  footer .footerTextRight {
+  footer .footerTextCopyright {
     padding: 20px;
     width: 100%;
     text-align: center;

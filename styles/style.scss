@@ -427,7 +427,7 @@ footer {
   background-size: cover;
   min-height: 300px;
   width: 100%;
-  .footerTextRight {
+  .footerTextCopyright {
     margin-top: 20px;
     text-align: right;
     color: $secondaryColor;
@@ -483,6 +483,14 @@ footer {
 .iconGit {
   font-size: 20px;
   width: 20px;
+}
+.textFooterAbsolute {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%);
+  color: $highlightColor2;
+  font-size: 26px;
 }
 .overlayNav {
   width: 100%;
@@ -618,13 +626,14 @@ footer {
   footer {
     flex-direction: column;
     background-image: url(../images/footerImgMobile.svg);
+    justify-content: center;
     background-position: center;
     div {
       color: $secondaryColor;
       width: 90%;
       font-weight: 300;
     }
-    .footerTextRight {
+    .footerTextCopyright {
       padding: 20px;
       width: 100%;
       text-align: center;
