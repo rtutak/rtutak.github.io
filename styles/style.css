@@ -171,25 +171,25 @@
 
 @-webkit-keyframes glovingArrows {
   0% {
-    opacity: 0;
-  }
-  50% {
     opacity: 1;
   }
-  100% {
+  50% {
     opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
 @keyframes glovingArrows {
   0% {
-    opacity: 0;
-  }
-  50% {
     opacity: 1;
   }
-  100% {
+  50% {
     opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
@@ -381,6 +381,8 @@ html {
   cursor: pointer;
   -webkit-animation: glovingArrows 3s infinite;
           animation: glovingArrows 3s infinite;
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
   -webkit-transition: 0.5s ease-out;
   transition: 0.5s ease-out;
   margin-top: 10px;
@@ -436,6 +438,16 @@ html {
   margin: 50px 0 0 0;
   font-weight: 300;
   color: #101010;
+  position: relative;
+}
+
+#projects h1::before, #projects h1::after {
+  content: "";
+  display: inline-block;
+  width: 50px;
+  margin: 0 10px 0 10px;
+  vertical-align: middle;
+  border-bottom: 1px solid #101010;
 }
 
 .projectsContainer {
@@ -636,6 +648,15 @@ html {
   margin: 50px 0 20px 0;
   color: #101010;
   font-weight: 300;
+}
+
+.galleryContainer h1::before, .galleryContainer h1::after {
+  content: "";
+  display: inline-block;
+  width: 50px;
+  margin: 0 10px 0 10px;
+  vertical-align: middle;
+  border-bottom: 1px solid #101010;
 }
 
 .gallery {
