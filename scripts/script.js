@@ -8,19 +8,32 @@ const liHandler = document.querySelectorAll(".overlayNav li");
 window.addEventListener("load", () => {
   document.querySelector(".loadingContainer").classList.add("hidden");
 
-  var textWrapper = document.querySelector(".textAnimation");
+  var textWrapper = document.querySelector(".letters");
   textWrapper.innerHTML = textWrapper.textContent.replace(
-    /\S/g,
+    /([^\x00-\x80]|\w)/g,
     "<span class='letter'>$&</span>"
   );
 
-  anime.timeline({ loop: false }).add({
-    targets: ".textAnimation .letter",
-    opacity: [0, 1],
-    easing: "easeInOutQuad",
-    duration: 2250,
-    delay: (el, i) => 200 * (i + 1),
-  });
+  anime
+    .timeline({ loop: false })
+    .add({
+      targets: ".line",
+      translateX: [
+        0,
+        document.querySelector(".letters").getBoundingClientRect().width + 10,
+      ],
+      easing: "easeOutExpo",
+      duration: 1000,
+      delay: 1000,
+    })
+    .add({
+      targets: ".letter",
+      opacity: [0, 1],
+      easing: "easeOutExpo",
+      duration: 600,
+      offset: "-=775",
+      delay: (el, i) => 34 * (i + 1),
+    });
 });
 
 overlayToggle = () => {

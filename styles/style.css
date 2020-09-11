@@ -381,8 +381,8 @@ html {
   cursor: pointer;
   -webkit-animation: glovingArrows 3s infinite;
           animation: glovingArrows 3s infinite;
-  -webkit-animation-delay: 5s;
-          animation-delay: 5s;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
   -webkit-transition: 0.5s ease-out;
   transition: 0.5s ease-out;
   margin-top: 10px;
@@ -430,6 +430,20 @@ html {
   text-align: center;
   line-height: 22px;
   color: white;
+}
+
+.text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.1em;
+  padding-right: 0.05em;
+  padding-bottom: 0.15em;
+}
+
+.letter {
+  display: inline-block;
+  opacity: 0;
+  line-height: 1em;
 }
 
 #projects h1 {

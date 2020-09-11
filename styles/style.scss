@@ -155,7 +155,7 @@ html {
     color: $highlightColor2;
     cursor: pointer;
     animation: glovingArrows 3s infinite;
-    animation-delay: 5s;
+    animation-delay: 3s;
     transition: 0.5s ease-out;
     margin-top: 10px;
     &:hover {
@@ -185,6 +185,18 @@ html {
     line-height: 22px;
     color: $secondaryColor;
   }
+}
+.text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.1em;
+  padding-right: 0.05em;
+  padding-bottom: 0.15em;
+}
+.letter {
+  display: inline-block;
+  opacity: 0;
+  line-height: 1em;
 }
 #projects {
   h1 {
