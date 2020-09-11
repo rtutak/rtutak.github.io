@@ -385,7 +385,7 @@ html {
           animation-delay: 3s;
   -webkit-transition: 0.5s ease-out;
   transition: 0.5s ease-out;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .introduceContainer i:hover {
@@ -428,8 +428,17 @@ html {
   font-size: 20px;
   font-weight: 300;
   text-align: center;
-  line-height: 22px;
+  line-height: 30px;
   color: white;
+}
+
+.svgImagesContainer .bigText {
+  font-size: 32px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding-bottom: 10px;
+  font-weight: 800;
+  font-family: Raleway, sans-serif;
 }
 
 .text-wrapper {
